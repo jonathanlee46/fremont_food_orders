@@ -6,5 +6,8 @@ $(function () {
 	'use strict';
 
 	//create the app
-	new app.AppView();
+  // var bill = new Todos();
+  // var order = new app.Todo();
+
+	var app = new app.AppView();
 });

@@ -31,10 +31,20 @@ var app = app || {};
 			this.listenTo(app.todos, 'filter', this.filterAll);
 			this.listenTo(app.todos, 'all', _.debounce(this.render, 0));
 
-			app.todos.fetch({reset: true});
+			// app.todos.fetch({reset: true});
+
+			model: app.model;
+			var that = this;
+			this.model.fetch({
+				success: function(){
+					console.log("fetching done");
+				}
+			});
 		},
 
 		render: function () {
+			
+
 			var completed = app.todos.completed().length;
 			var remaining = app.todos.remaining().length;
 
